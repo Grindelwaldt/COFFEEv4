@@ -1,4 +1,4 @@
-const socket = new WebSocket('wss://https://coffeev4.onrender.com:3000');
+const socket = new WebSocket('wss://coffeev4.onrender.com:3000');
 
     socket.onopen = () => {
       console.log('Connected to server');
