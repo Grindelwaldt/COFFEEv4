@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
 });
 
 // Raw WebSocket setup (for ESP32)
-const wss = new WebSocket.Server({ httpServer }); // attaches to same HTTP server
+const wss = new WebSocket.Server({ "server": httpServer }); // attaches to same HTTP server
 
 wss.on("connection", (ws, req) => {
   console.log("ESP32 WebSocket client connected");
