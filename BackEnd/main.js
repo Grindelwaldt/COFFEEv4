@@ -23,7 +23,7 @@ wss.on('connection', (ws) => {
     ws.send('Welcome WebSocket client!');
 });
 
-app.listen(PORT, (error) =>{
+server.listen(PORT, (error) =>{
     if(!error)
         console.log("Server is Successfully Running, and App is listening on port "+ PORT);
     else 
