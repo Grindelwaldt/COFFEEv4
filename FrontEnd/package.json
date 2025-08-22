@@ -1,0 +1,22 @@
+{
+  "name": "coffee2",
+  "version": "4.0.0",
+  "description": "COFFEE but better",
+  "main": "main.js",
+  "scripts": {
+    "test": "COFFEE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grindelwaldt/COFFEEv4.git"
+  },
+  "keywords": [
+    "COFFEE"
+  ],
+  "author": "CoffeeDrinker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grindelwaldt/COFFEEv4/issues"
+  },
+  "homepage": "https://github.com/Grindelwaldt/COFFEEv4#readme"
+}
