@@ -1,18 +1,7 @@
-const socket = new WebSocket('wss://coffeev4.onrender.com');
+import io from "socket.io-client";
 
-    socket.onopen = () => {
-      console.log('Connected to server');
-      socket.send('Hello from client!');
-    };
+socket = io("https://coffeev4.onrender.com");
 
-    socket.onmessage = (event) => {
-      console.log('Message from server:', event.data);
-    };
-
-    socket.onclose = () => {
-      console.log('Disconnected from server');
-    };
-
-    socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
+socket.on("connect", () => {
+      console.log("Connected to server:", socket.id);
+});
