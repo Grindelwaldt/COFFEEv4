@@ -2,6 +2,8 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
+// esp32 libs
+const WebSocket = require('ws');
 
 const app = express();
 app.use(cors({
@@ -24,6 +26,22 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log("User disconnected:", socket.id);
+  });
+});
+
+// Raw WebSocket setup (for ESP32)
+const wss = new WebSocket.Server({ httpServer }); // attaches to same HTTP server
+
+wss.on("connection", (ws, req) => {
+  console.log("ESP32 WebSocket client connected");
+
+  ws.on("message", (message) => {
+    console.log("ESP32 message:", message.toString());
+    ws.send("Hello ESP32!");
+  });
+
+  ws.on("close", () => {
+    console.log("ESP32 client disconnected");
   });
 });
 
