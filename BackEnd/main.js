@@ -26,3 +26,7 @@ io.on("connection", (socket) => {
     console.log("User disconnected:", socket.id);
   });
 });
+
+httpServer.listen(4000, () => {
+  console.log("Socket.IO server listening on port 4000");
+});
