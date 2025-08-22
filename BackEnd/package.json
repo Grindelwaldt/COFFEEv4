@@ -1,26 +1,15 @@
 {
-  "name": "coffee2",
-  "version": "4.0.0",
-  "description": "Backend for COFFEE",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "COFFEE"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Grindelwaldt/COFFEEv4.git"
-  },
-  "keywords": [
-    "COFFEE"
-  ],
-  "author": "CoffeeDrinker",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Grindelwaldt/COFFEEv4/issues"
-  },
-  "homepage": "https://github.com/Grindelwaldt/COFFEEv4#readme",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7"
+    "express": "^5.1.0"
   }
 }
