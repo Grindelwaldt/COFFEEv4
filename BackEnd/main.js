@@ -33,6 +33,7 @@ io.on("connection", (socket) => {
     if (esp32Socket && esp32Socket.readyState === WebSocket.OPEN) {
         esp32Socket.send(JSON.stringify({ type: "set-coffee-machine-on-status", value: bOn }));
     }
+    socket.broadcast.emit("bOn-status", bOn);
   })
 
   socket.on("disconnect", () => {
