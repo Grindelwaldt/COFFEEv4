@@ -4,6 +4,8 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 // esp32 libs
 const WebSocket = require('ws');
+let bOn = false;
+let esp32Socket = null;
 
 const app = express();
 app.use(cors({
@@ -24,6 +26,15 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
+  socket.emit("bOn-status",bOn)
+
+  socket.on("set-bon-status", (newbOn) => {
+    bOn = newbOn;
+    if (esp32Socket && esp32Socket.readyState === WebSocket.OPEN) {
+        esp32Socket.send(JSON.stringify({ type: "set-coffee-machine-on-status", value: bOn }));
+    }
+  })
+
   socket.on("disconnect", () => {
     console.log("User disconnected:", socket.id);
   });
@@ -34,6 +45,11 @@ const wss = new WebSocket.Server({ server: httpServer, path: "/esp32" }); // att
 
 wss.on("connection", (ws, req) => {
   console.log("ESP32 WebSocket client connected");
+  esp32Socket = ws;
+
+//   ws.send("set-coffee-machine-on-status",bOn);
+  esp32Socket.send(JSON.stringify({ type: "set-coffee-machine-on-status", value: bOn }));
+
 
   ws.on("message", (message) => {
     console.log("ESP32 message:", message.toString());
@@ -42,6 +58,7 @@ wss.on("connection", (ws, req) => {
 
   ws.on("close", () => {
     console.log("ESP32 client disconnected");
+    esp32Socket = null;
   });
 });
 
