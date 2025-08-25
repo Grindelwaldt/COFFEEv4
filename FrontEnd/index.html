@@ -15,20 +15,117 @@
         <h1>COFFEEv2^2</h1>
     </div>
 
-    <div >
-        Machine status: 
-        <label class="switch">
-            <input type="checkbox" id="machine-toggle">
-            <span class="slider round"></span>
-        </label>
+    <!-- making two elements next to one another -->
+    <div class="container">
+        <div class = "seg_box">
+            <h1 class="tight-header">Status</h1>
+            <div class="row">
+                <span class="row-discriptor">On/Off:</span>
+                <label class="switch">
+                    <input type="checkbox" id="machine-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Temperature:  </span>
+                <span>47</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Cups ready:  </span>
+                <span>3.5</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Max available cups:  </span>
+                <span>20</span>
+            </div>
+        </div>
+        <div class = "seg_box">
+            <h1 class="tight-header">Settings</h1>
+            <div class="row">
+                <span class="row-discriptor">Temperature:  </span>
+                <span>50</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Groung per cup (mg):  </span>
+                <span>10</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Max ground (mg):  </span>
+                <span>500</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Max ground age (h):  </span>
+                <span>24</span>
+            </div>
+        </div>
     </div>
 
-    <!-- making two elements next to one another -->
-     <!-- <div>
-        <div style="float: left; width: 50%; background-color: lightblue; border: 1px solid black; box-sizing: border-box;">Div 1</div>
-        <div style="float: left; width: 50%; background-color: lightgreen; border: 1px solid black; box-sizing: border-box;">Div 2</div>
-     </div>
-    <div>done</div> -->
+    <div class="container">
+        <div class = "seg_box">
+            <h1 class="tight-header">Grounds</h1>
+            <div class="row">
+                <span class="row-discriptor">Ground age(h):</span>
+                <span>2.2</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Total ground (mg):  </span>
+                <span>120</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Ground remaining (mg):  </span>
+                <span>1000</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Current ground:  </span>
+                <span>Woolies Italian blend</span>
+            </div>
+
+            <div class="row">
+                <span class="row-discriptor">Current sponsor:  </span>
+                <span>David</span>
+            </div>
+        </div>
+        <div class = "seg_box">
+            <h1 class="tight-header">Schedule</h1>
+            <div class="row">
+                <span class="row-discriptor">On/Off:</span>
+                <label class="switch">
+                    <input type="checkbox" id="schedule-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Monday:</span>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Tuesday:</span>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Wednesday:</span>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Thursday:</span>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Friday:</span>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Saturday:</span>
+            </div>
+            <div class = "day-row">
+                <span class="row-discriptor">Sunday:</span>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
